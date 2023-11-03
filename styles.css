@@ -1,0 +1,131 @@
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Slightly-transparent-white1: hsla(0, 0%, 100%, 0.75);
+    --Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+    --Very-dark-blue: hsl(233, 47%, 7%);
+    --Dark-desaturated-blue: hsl(244, 38%, 16%);
+    --Soft-violet: hsl(277, 64%, 61%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    font-size: 15px;
+    background-color: var(--Very-dark-blue);
+}
+
+.attribution{
+    position: absolute;
+    bottom: 0px;
+}
+
+.container{
+    display: flex;
+    background-color: var(--Dark-desaturated-blue);
+    border-radius: 8px;
+    /* this makes the corners of the picture also round*/
+    overflow: hidden;
+    height: 380px;
+    width: 950px;
+}
+
+.image{
+    width: 50%;
+    height: auto;
+    background: linear-gradient(
+        0deg,
+        hsla(277, 64%, 61%, 0.5) 0%,
+        hsla(277, 64%, 61%, 0.5) 100%
+      ),
+      url(./images/image-header-desktop.jpg) no-repeat center;
+     background-size: cover;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 1rem 3rem 0;
+}
+
+.stats{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 5rem 0 .5rem;
+}
+
+h1{
+    padding: 2.5rem .5rem .5rem;
+}
+
+h1, h2, .attribution{
+    font-family: "Inter";
+    color: var(--White);
+}
+
+
+.main-text{
+    padding: 1rem 4.5rem 4rem .5rem;
+    line-height: 1.7;
+}
+
+p{
+    font-family: "Lexend Deca";
+    color: var(--Slightly-transparent-white1);
+    font-size: 12px;
+}
+
+span{
+    color: var(--Soft-violet);
+}
+
+@media (max-width: 375px) {
+    .container {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        width: 90vw;
+        height: 90vh;
+      }
+
+    .text{
+        width: auto;
+        text-align: center;
+        padding: .5rem 1.2rem;
+        height: 70%;
+    }
+
+    .main-text{
+        padding: .5rem 2.5rem;
+    }
+
+    .stats{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        padding: 0;
+    }
+
+    .image {
+        width: 100%;
+        height: 30%;
+        background: linear-gradient(
+            0deg,
+            hsla(277, 64%, 61%, 0.5) 0%,
+            hsla(277, 64%, 61%, 0.5) 100%
+          ),
+          url(images/image-header-mobile.jpg) center no-repeat;
+        background-size: cover;
+      }
+}
